@@ -20,7 +20,9 @@ export default class LocalPlace extends Component {
           });
         },
         error => {
-          console.error(error);
+          alert(
+            "Sorry there was an error grabbing your latitude and longitude!"
+          );
         }
       );
     }

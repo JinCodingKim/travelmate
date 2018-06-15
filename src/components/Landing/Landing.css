@@ -179,6 +179,7 @@
   box-shadow: none;
   background-color: rgb(137, 229, 91, 0.5);
   transition: box-shadow 200ms;
+  cursor: not-allowed;
 }
 
 @media (min-width: 768px) {
