@@ -14,13 +14,13 @@
 }
 
 .nav-bar > h1 {
-  margin: 0;
   font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
+  font-size: 26px;
   font-weight: 100;
   line-height: 26px;
-  font-size: 26px;
+  text-transform: uppercase;
   color: rgb(0, 0, 0);
+  margin: 0;
 }
 
 .nav-bar > h1 > span {
@@ -44,11 +44,11 @@
 }
 
 .weather > p {
-  margin: -9px 0 0 3px;
   font-family: "Roboto", sans-serif;
   font-size: 10px;
   font-weight: 600;
   color: rgb(65, 105, 225);
+  margin: -9px 0 0 3px;
 }
 
 .weather > img {
@@ -63,8 +63,8 @@
   }
 
   .nav-bar > h1 {
-    line-height: 32px;
     font-size: 32px;
+    line-height: 32px;
   }
 
   .nav-bar > img {
@@ -76,8 +76,8 @@
   }
 
   .weather > p {
-    margin: -10px 0 0 5px;
     font-size: 14px;
+    margin: -10px 0 0 5px;
   }
 
   .weather > img {

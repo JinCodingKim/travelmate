@@ -55,14 +55,17 @@ export default class LocalPlace extends Component {
   ${categories[0].icon.prefix}64${categories[0].icon.suffix}`
       : `${placeholderImg}`;
 
+    /* Conditional to make sure a valid address will be put out onto the DOM */
     const availableAddress = location.address
       ? location.formattedAddress.join(", ")
       : this.state.address;
 
+    /* This will be the google search link for the name of the location */
     const googleSearch = `http://google.com/search?q=${name
       .split(" ")
       .join("+")}`;
 
+    /* This will be the google map search link for the address of the current location */
     const mapSearch = `https://www.google.com/maps/place/${availableAddress
       .split(" ")
       .join("+")}`;
