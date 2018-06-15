@@ -1,0 +1,192 @@
+.landing-header > h1,
+.landing-header > h4,
+.location-wrapper > input {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+.input-container,
+.location-wrapper > input,
+.location-button,
+.category-button,
+#submit-button {
+  outline: none;
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+}
+
+.input-container,
+.category-button,
+#submit-button {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.location-button,
+.category-button,
+#submit-button {
+  cursor: pointer;
+}
+
+/* These handle the background and general layout of the page */
+.landing:before {
+  height: 100%;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: url("../../img/art.jpg");
+  background-size: cover;
+  background-position: 55%;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.landing {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 30% 70%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.landing-header {
+  align-self: end;
+  text-align: center;
+  margin: 28px 0;
+}
+
+.landing-header > h1 {
+  line-height: 46px;
+  font-size: 46px;
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+.landing-header > h1 > span {
+  color: rgb(65, 105, 225);
+  font-weight: 900;
+}
+
+.landing-header > h4 {
+  margin: 0;
+  letter-spacing: 3px;
+  font-size: 14px;
+}
+
+.landing-body {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+}
+
+/* These handle the input box and current location icon */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 21px;
+  line-height: 23px;
+  margin: 10px 0 20px 0;
+}
+
+.location-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.location-wrapper > input {
+  height: 34px;
+  width: 100%;
+  font-size: 16px;
+  background-color: rgb(255, 255, 255, 0.5);
+  padding: 0px 32px 0 8px;
+}
+
+.valid {
+  border: 1.5px solid rgb(137, 229, 91);
+}
+
+.error {
+  border: 1.5px solid rgb(110, 128, 112, 0.75);
+}
+
+.location-button {
+  height: 22px;
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  fill: rgb(0, 0, 0, 0.75);
+  transition: 300ms ease-in;
+}
+
+.location-button.location-on {
+  fill: rgb(65, 105, 225);
+  transition: 300ms ease-out;
+}
+
+/* These handle the category buttons below the input box */
+.category-container {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  grid-column-gap: 4px;
+  grid-row-gap: 16px;
+  align-content: space-around;
+}
+
+.category-button {
+  min-height: 50px;
+  min-width: 90px;
+  color: rgb(65, 105, 225);
+  background-color: rgb(255, 255, 255, 0.75);
+  border: 1.5px solid rgb(65, 105, 225);
+  font-size: 10px;
+  line-height: 35px;
+  text-align: center;
+  transition: box-shadow 200ms;
+}
+
+.category-button.active {
+  color: white;
+  background-color: rgb(65, 105, 225);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 200ms;
+}
+
+/* These handle the submit button below the category buttons */
+#submit-button {
+  height: 34px;
+  color: rgb(255, 255, 255);
+  border: none;
+  background-color: rgb(137, 229, 91);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  font-size: 21px;
+  margin: 20px 0 30px 0;
+  transition: box-shadow 200ms;
+}
+
+#submit-button:hover {
+  box-shadow: none;
+  transition: box-shadow 200ms;
+}
+
+#submit-button:disabled {
+  box-shadow: none;
+  background-color: rgb(137, 229, 91, 0.5);
+  transition: box-shadow 200ms;
+}
+
+@media (min-width: 768px) {
+  .landing {
+    padding: 20px 20vw;
+  }
+  .category-button {
+    font-size: 15px;
+    line-height: 40px;
+  }
+}

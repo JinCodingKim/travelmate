@@ -1,0 +1,26 @@
+/* This handles the whole application layout */
+.app {
+  height: 100vh;
+  width: 100%;
+}
+
+/* This handles the page layout after the user submits a location and goes to locals listing page */
+.locals-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* This handles the locals listing page layout besides the navigation bar */
+.list-container {
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 52px;
+  overflow-y: scroll;
+}
+
+@media (min-width: 768px) {
+  .list-container {
+    padding-top: 74px;
+  }
+}

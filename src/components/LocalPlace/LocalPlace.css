@@ -1,0 +1,114 @@
+/* This handles the card's general layout */
+.card {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(65, 105, 225);
+}
+
+/* This handle the icon image */
+.img-container {
+  width: 17vw;
+  display: flex;
+}
+
+/* These handle the styling of the actual content in the card, besides the icon */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 66vw;
+  box-sizing: border-box;
+  padding: 8px 2px 8px 2px;
+}
+
+.card-head > h2 {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  line-height: 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
+
+.card-head > h3 {
+  margin: 0;
+  height: 13px;
+  color: #e8eef1;
+  font-family: "Alegreya", serif;
+  font-size: 10px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+.card-content > p {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 12px;
+  color: #e8eef1;
+}
+
+/* These handle the svgs link icons on the right side of the cards */
+.links-container {
+  width: 17vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 8px;
+}
+
+.links-container > a {
+  margin: 6px 0;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+}
+
+.link-svg {
+  width: 28px;
+}
+
+.svg-effects {
+  fill: rgb(255, 255, 255);
+  transition: 200ms ease-in-out;
+}
+
+.link-svg:hover .svg-effects {
+  fill: rgb(65, 105, 225);
+  transition: 200ms ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .card {
+    height: 125px;
+  }
+  .img-container {
+    margin: 0 12px;
+    justify-content: center;
+  }
+
+  .card-head > h2 {
+    line-height: 28px;
+    font-size: 28px;
+  }
+
+  .card-head > h3 {
+    height: 20px;
+    font-size: 16px;
+  }
+
+  .card-content > p {
+    font-size: 14px;
+  }
+
+  .links-container {
+    margin: 0 12px;
+  }
+  .links-container > a {
+    margin: 12px 0;
+  }
+}
