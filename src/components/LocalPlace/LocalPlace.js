@@ -85,7 +85,7 @@ export default class LocalPlace extends Component {
           <p>{availableAddress}</p>
         </div>
         <div className="links-container">
-          <a href={googleSearch}>
+          <a target="_blank" href={googleSearch}>
             <svg
               className="link-svg"
               version="1.1"
@@ -100,7 +100,7 @@ export default class LocalPlace extends Component {
               />
             </svg>
           </a>
-          <a href={mapSearch}>
+          <a target="_blank" href={mapSearch}>
             <svg
               className="link-svg"
               version="1.1"
