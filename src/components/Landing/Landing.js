@@ -37,7 +37,8 @@ export default class Landing extends Component {
       }
     ],
     validButtons: false,
-    validLocation: false
+    errorMsg: false,
+    errorLocation: false
   };
 
   handleChange = event => {
@@ -50,10 +51,12 @@ export default class Landing extends Component {
             and set address to the target value  */
     event.preventDefault();
     const { value } = event.target;
+    this.setState({
+      errorMsg: false
+    });
     if (!value) {
       this.setState({
-        address: value,
-        validLocation: false
+        address: value
       });
     } else {
       if (value !== "Current Location") {
@@ -61,8 +64,7 @@ export default class Landing extends Component {
           address: value,
           location: false,
           lat: 0,
-          lng: 0,
-          validLocation: true
+          lng: 0
         });
       } else {
         this.geoLocator();
@@ -80,11 +82,13 @@ export default class Landing extends Component {
           lng: position.coords.longitude,
           location: !this.state.location,
           address: "Current Location",
-          validLocation: true
+          errorMsg: false
         });
       });
     } else {
-      alert("Sorry your browser does not support this functionality");
+      this.setState({
+        errorLocation: true
+      });
     }
   };
 
@@ -98,10 +102,9 @@ export default class Landing extends Component {
     } else {
       this.setState({
         address: "",
-        location: false,
+        location: !this.state.location,
         lat: 0,
-        lng: 0,
-        validLocation: false
+        lng: 0
       });
     }
   };
@@ -173,9 +176,9 @@ export default class Landing extends Component {
         this.props.handleList(res.data.response.venues, geoOrAddForWeather)
       )
       .catch(() =>
-        alert(
-          `Sorry that was not a valid address. Please try a different address.`
-        )
+        this.setState({
+          errorMsg: true
+        })
       );
   };
 
@@ -185,7 +188,8 @@ export default class Landing extends Component {
       address,
       location,
       validButtons,
-      validLocation
+      errorLocation,
+      errorMsg
     } = this.state;
 
     /* This will create a conditional class depending on the state.location */
@@ -227,16 +231,21 @@ export default class Landing extends Component {
             Address
             <div className="location-wrapper">
               <input
-                className={!validLocation ? "error" : "valid"}
+                className={errorMsg ? "error" : "valid"}
                 placeholder="Dallas, TX"
                 name="address"
                 type="text"
                 value={address}
                 onChange={this.handleChange}
               />
+              <p className={errorMsg ? "errMsg" : "noMsg"}>
+                Valid address is required.
+              </p>
+              <p className={errorLocation ? "errMsg" : "noMsg"}>
+                Browser does not support this functionality.
+              </p>
               <svg
-                className={locationSwitch.join(" ")}
-                name="location"
+                className={errorLocation ? "errSvg" : locationSwitch.join(" ")}
                 onClick={this.handleGeo}
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -254,7 +263,7 @@ export default class Landing extends Component {
 
           <div className="category-container">{buttonsList}</div>
           <input
-            disabled={!validButtons || !validLocation}
+            disabled={!validButtons || errorMsg}
             id="submit-button"
             type="submit"
             value="submit"

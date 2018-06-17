@@ -1,3 +1,4 @@
+/* making sure the font styling is uniform */
 .landing-header > h1,
 .landing-header > h4,
 .location-wrapper > input {
@@ -6,6 +7,7 @@
   font-weight: 100;
 }
 
+/* making sure the general button and input styling is uniform */
 .input-container,
 .location-wrapper > input,
 .location-button,
@@ -16,6 +18,7 @@
   letter-spacing: 0.5px;
 }
 
+/* making sure the font styling is uniform */
 .input-container,
 .category-button,
 #submit-button {
@@ -24,10 +27,21 @@
   text-transform: uppercase;
 }
 
+/* make sure its cursor is a pointer when its a button */
 .location-button,
 .category-button,
 #submit-button {
   cursor: pointer;
+}
+
+/* general format for the current location svg button */
+.location-button,
+.errSvg {
+  height: 22px;
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  transition: 300ms ease-in;
 }
 
 /* These handle the background and general layout of the page */
@@ -50,7 +64,7 @@
 .landing {
   height: 100vh;
   display: grid;
-  grid-template-rows: 30% 70%;
+  grid-template-rows: 27% 73%;
   box-sizing: border-box;
   padding: 0 20px;
 }
@@ -58,7 +72,7 @@
 .landing-header {
   align-self: end;
   text-align: center;
-  margin: 28px 0;
+  margin: 20px 0;
 }
 
 .landing-header > h1 {
@@ -91,7 +105,7 @@
   flex-direction: column;
   font-size: 21px;
   line-height: 23px;
-  margin: 10px 0 20px 0;
+  margin: 10px 0 36px 0;
 }
 
 .location-wrapper {
@@ -109,20 +123,31 @@
 }
 
 .valid {
-  border: 1.5px solid rgb(137, 229, 91);
+  border: 1.5px solid rgb(0, 0, 0);
 }
 
 .error {
-  border: 1.5px solid rgb(110, 128, 112, 0.75);
+  border: 1.5px solid rgb(245, 50, 41);
+}
+
+.errMsg {
+  position: absolute;
+  top: 25px;
+  font-size: 12px;
+  text-transform: none;
+  color: rgb(245, 50, 41);
+}
+
+.noMsg {
+  display: none;
+}
+
+.errSvg {
+  fill: rgb(245, 50, 41);
 }
 
 .location-button {
-  height: 22px;
-  position: absolute;
-  right: 7px;
-  bottom: 7px;
   fill: rgb(0, 0, 0, 0.75);
-  transition: 300ms ease-in;
 }
 
 .location-button.location-on {
@@ -166,7 +191,7 @@
   background-color: rgb(137, 229, 91);
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
   font-size: 21px;
-  margin: 20px 0 30px 0;
+  margin-top: 36px;
   transition: box-shadow 200ms;
 }
 
