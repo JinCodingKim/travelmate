@@ -10,7 +10,7 @@ This application was created with:
 
 ## Getting Started
 
-Once you have cloned the application, you will have to run:
+1.  Once you have cloned the application, to install the dependencies required for the application, you will have to run:
 
 ```
 yarn
@@ -22,9 +22,18 @@ OR
 npm install
 ```
 
-to install the dependencies required to run the application.
+2.  In the root folder of the application, you will need to create a .env file containing the following information:
 
-Once that is completed, you will have to run:
+```
+REACT_APP_CLIENT_ID=************
+REACT_APP_CLIENT_SECRET=************
+REACT_APP_WEATHER_KEY=************
+```
+
+- CLIENT_ID and CLIENT_SECRET is obtained through the <a href="https://developer.foursquare.com">Foursquare API</a>
+- WEATHER_KEY is obtained through the <a href="https://www.apixu.com/api.aspx">APIXU API</a>
+
+3.  Once that is completed, to fire up the application, run:
 
 ```
 yarn start
@@ -35,8 +44,6 @@ OR
 ```
 npm start
 ```
-
-to run the application.
 
 ## Application Rundown
 
