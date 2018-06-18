@@ -53,7 +53,7 @@ Listing Page:
 - User can click on "G" icon link for Google, to search the activity's name.
 - User can click on the Map icon link for Google Map, to search where the exact location is on google maps.
 
-## Future Implications
+## Future Features
 
 Some ways I would like to expand on the application in the future:
 
