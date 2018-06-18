@@ -53,6 +53,14 @@ Listing Page:
 - User can click on "G" icon link for Google, to search the activity's name.
 - User can click on the Map icon link for Google Map, to search where the exact location is on google maps.
 
+## Future Implications
+
+Some ways I would like to expand on the application in the future:
+
+- The API did not provide any images for the locations that are reliable. I would like to implement another API that would provide me with good snapshots of the locations to provide the user with more of an idea to what the location is like.
+- Implement Google Maps API to give the user the ability to see the nearby locations directly from the application; rather than being re-routed to google maps website.
+- Give the application a dating twist. This could be a very practical tool for couple's that have a hard time deciding on what to do on a certain day, or if they are on a trip, they could use this tool to find something to do on some spare time.
+
 ## Requirements
 
 The package.json file contains a list of all the dependencies required to run this application.
