@@ -13,18 +13,11 @@ export default class LocalPlace extends Component {
         to a formatted address, and store it in the store.address */
     const { address, lat, lng } = this.props.local.location;
     if (!address) {
-      Geocode.fromLatLng(`${lat}`, `${lng}`).then(
-        response => {
-          this.setState({
-            address: response.results[0].formatted_address
-          });
-        },
-        error => {
-          alert(
-            "Sorry there was an error grabbing your latitude and longitude!"
-          );
-        }
-      );
+      Geocode.fromLatLng(`${lat}`, `${lng}`).then(response => {
+        this.setState({
+          address: response.results[0].formatted_address
+        });
+      });
     }
   }
   render() {

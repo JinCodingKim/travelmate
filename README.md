@@ -22,7 +22,7 @@ OR
 npm install
 ```
 
-to install the requirements to run the application.
+to install the dependencies required to run the application.
 
 Once that is completed, you will have to run:
 
